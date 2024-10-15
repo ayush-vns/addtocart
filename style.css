@@ -1,0 +1,40 @@
+.game{
+    height: 60vmin;
+    width: 60vmin;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5vmin;
+    position: absolute;
+    top: 30%;
+    left: 37%;
+    align-items: center;
+}
+.box{
+    height: 18vmin;
+    width: 18vmin;
+    border-radius: 1rem;
+    font-size: 50px;
+    background-color: antiquewhite;
+    box-shadow: 5px 5px 5px 5px ;
+    
+    
+}
+
+.nam{
+    text-align: center;
+}
+/* div{
+    border: ridge black;
+} */
+.box[value="X"] {
+    color: red;
+    box-shadow: 5px 5px 5px 5px ;
+}
+.box[value="0"] {
+    color: blue;
+    box-shadow: 5px 5px 5px 5px ;
+}
+.hg {
+    background-color: rgb(59, 237, 59); 
+}
+

@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>javascript</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+<style>
+    .f2 {
+        width: 100px;
+        height: 100px;
+        top: 0px;
+        right: 0px;
+        position: absolute;
+        background-color: blue;
+    }
+
+    .btn {
+        position: absolute;
+        top: 50%;
+        width: 70px;
+        left: 50%;
+        /* right: 30%; */
+        background-color: greenyellow;
+    }
+</style>
+<script>
+    let start = 0;
+    let stop = 900;
+    let left1 = 0;
+    let top1 = 0;
+    let left2 = 0;
+    let top2 = 0;
+    let bttn, bttn2;
+    let loop;
+    function swap(d1, d2) {
+        // alert();
+        // console.log(d1);
+        // console.log(d2);
+        bttn = document.getElementById(d1);
+        bttn2 = document.getElementById(d2);
+
+        // start++;
+        left1 = bttn.style.left.replace("px", "");
+        top1 = bttn.style.top.replace("px", "");
+        left2 = bttn.style.left.replace("px", "");
+        top2 = bttn.style.top.replace("px", "");
+        console.log("swap");
+        loop = setInterval("doMoveright()", 10);
+
+
+    }
+
+    function doMoveright() {
+        console.log(left1);
+        // bttn = document.getElementById(d1);
+        // bttn2 = document.getElementById(d2);
+        bttn.style.left = left1 + "px";
+        bttn.style.top = top1 + "px";
+        bttn2.style.right = left2 + "px";
+        bttn2.style.top = top2 + "px";
+        left1++;
+        left2++;
+        if (left1 >= stop)
+            clearInterval(loop);
+        if (left2 >= stop)
+            clearInterval(loop);
+        // d2.style.right = left2 + "px";
+        // d2.style.right = top2 + "px";
+
+        // if (left1 >= stop)
+        //     clearInterval(loop);
+        // if (left2 >= stop)
+        //     clearInterval(loop);
+
+    }
+    // function f2() {
+    //     loop = setInterval("doMoveleft()", 100);
+    //     loop2 = setInterval("doMoveright()", 100);
+    // }
+</script>
+
+<body>
+    <div style="width: 100px;
+    height: 100px;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    background-color: brown;
+" id="d1"></div>
+    <div style="width: 100px;
+    height: 100px;
+    top: 0px;
+    right: 0px;
+    position: absolute;
+    background-color: blue  ;
+" id="d2"></div>
+
+    <input class="btn" type="button" value="move" style="position: absolute; left: 0px;" onclick="swap('d1','d2')">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

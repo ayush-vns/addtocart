@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+<style>
+   
+    .mid {
+        position: absolute;
+        left: 30%;
+        top: 30%;
+    }
+</style>
+<script>
+    let player = 1;
+
+    function f1(y, x) {
+        console.log(y, x);
+        let obj = document.getElementById(`t${y}${x}`);
+        let value = obj.value;
+        obj.disabled="true";
+        // alert(result);
+        // console.log(result);
+        if (value != "click") {
+            alert("Already filled");
+            return;
+        }
+        if (player == 1)
+            obj.value = "X";
+        else
+            obj.value = "0";
+        player = 3 - player;
+        let result = f();
+        console.log(result);
+        let show = document.getElementById("s1");
+        // console.log("result");
+        if (result == "p1" || result == "p2") {
+            p1 = "player 1" 
+            // console.log("result");
+            show.value = result;
+            console.log("result");
+
+        }
+
+
+        
+        
+
+    }
+    function firstrow() {
+        // 
+        let x1 = document.getElementById("t11").value;
+        let x2 = document.getElementById("t12").value;
+        let x3 = document.getElementById("t13").value;
+
+        let xCount = 0;
+        let yCount = 0;
+        if (x1 == "X")
+            xCount++;
+        if (x2 == "X")
+            xCount++;
+        if (x3 == "X")
+            xCount++;
+        if (x1 == "0")
+            yCount++;
+        if (x2 == "0")
+            yCount++;
+        if (x3 == "0")
+            yCount++;
+        // alert(xCount + "," + yCount);
+        if (xCount == 3)
+            return "p1";
+        if (yCount == 3)
+            return "p2";
+        if (xCount > 0 && yCount > 0)
+            return "Draw";
+        return "Continue";
+
+        // document.getElementById("winner").innerText = "Winner" + winner;
+
+
+    }
+    function secondrow() {
+        // 
+        let x4 = document.getElementById("t21").value;
+        let x5 = document.getElementById("t22").value;
+        let x6 = document.getElementById("t23").value;
+
+        let xCount = 0;
+        let yCount = 0;
+        if (x4 == "X")
+            xCount++;
+        if (x5 == "X")
+            xCount++;
+        if (x6 == "X")
+            xCount++;
+        if (x4 == "0")
+            yCount++;
+        if (x5 == "0")
+            yCount++;
+        if (x6 == "0")
+            yCount++;
+        // alert(xCount + "," + yCount);
+        if (xCount == 3)
+            return "p1";
+        if (yCount == 3)
+            return "p2";
+        if (xCount > 0 && yCount > 0)
+            return "Draw";
+        return "Continue";
+
+        // document.getElementById("winner").innerText = "Winner" + winner;
+
+
+    }
+
+    function thirdrow() {
+        
+        let x12 = document.getElementById("t31").value;
+        let x13 = document.getElementById("t32").value;
+        let x14 = document.getElementById("t33").value;
+
+        let xCount = 0;
+        let yCount = 0;
+        if (x12 == "X")
+            xCount++;
+        if (x13 == "X")
+            xCount++;
+        if (x14 == "X")
+            xCount++;
+        if (x12 == "0")
+            yCount++;
+        if (x13 == "0")
+            yCount++;
+        if (x14 == "0")
+            yCount++;
+        // alert(xCount + "," + yCount);
+        if (xCount == 3)
+            return "p1";
+        if (yCount == 3)
+            return "p2";
+        if (xCount > 0 && yCount > 0)
+            return "Draw";
+        return "Continue";
+
+        // document.getElementById("winner").innerText = "Winner" + winner;
+
+
+    }
+    function firstcol() {
+        
+        let x21 = document.getElementById("t11").value;
+        let x22 = document.getElementById("t21").value;
+        let x23 = document.getElementById("t31").value;
+
+        let xCount = 0;
+        let yCount = 0;
+        if (x21 == "X")
+            xCount++;
+        if (x22 == "X")
+            xCount++;
+        if (x23 == "X")
+            xCount++;
+        if (x21 == "0")
+            yCount++;
+        if (x22 == "0")
+            yCount++;
+        if (x23 == "0")
+            yCount++;
+        // alert(xCount + "," + yCount);
+        if (xCount == 3)
+            return "p1";
+        if (yCount == 3)
+            return "p2";
+        if (xCount > 0 && yCount > 0)
+            return "Draw";
+        return "Continue";
+
+        // document.getElementById("winner").innerText = "Winner" + winner;
+
+
+    }
+    function secondcol() {
+        
+        let x31 = document.getElementById("t12").value;
+        let x32 = document.getElementById("t22").value;
+        let x33 = document.getElementById("t32").value;
+
+        let xCount = 0;
+        let yCount = 0;
+        if (x31 == "X")
+            xCount++;
+        if (x32 == "X")
+            xCount++;
+        if (x33 == "X")
+            xCount++;
+        if (x31 == "0")
+            yCount++;
+        if (x32 == "0")
+            yCount++;
+        if (x33 == "0")
+            yCount++;
+        // alert(xCount + "," + yCount);
+        if (xCount == 3)
+            return "p1";
+        if (yCount == 3)
+            return "p2";
+        if (xCount > 0 && yCount > 0)
+            return "Draw";
+        return "Continue";
+
+        // document.getElementById("winner").innerText = "Winner" + winner;
+
+
+    }
+    function thirdcol() {
+        
+        let x41 = document.getElementById("t13").value;
+        let x42 = document.getElementById("t23").value;
+        let x43 = document.getElementById("t33").value;
+
+        let xCount = 0;
+        let yCount = 0;
+        if (x41 == "X")
+            xCount++;
+        if (x42 == "X")
+            xCount++;
+        if (x43 == "X")
+            xCount++;
+        if (x41 == "0")
+            yCount++;
+        if (x42 == "0")
+            yCount++;
+        if (x43 == "0")
+            yCount++;
+        // alert(xCount + "," + yCount);
+        if (xCount == 3)
+            return "p1";
+        if (yCount == 3)
+            return "p2";
+        if (xCount > 0 && yCount > 0)
+            return "Draw";
+        return "Continue";
+
+        // document.getElementById("winner").innerText = "Winner" + winner;
+
+
+    }
+    function firstx() {
+        
+        let x51 = document.getElementById("t11").value;
+        let x52 = document.getElementById("t22").value;
+        let x53 = document.getElementById("t33").value;
+
+        let xCount = 0;
+        let yCount = 0;
+        if (x51 == "X")
+            xCount++;
+        if (x52 == "X")
+            xCount++;
+        if (x53 == "X")
+            xCount++;
+        if (x51 == "0")
+            yCount++;
+        if (x52 == "0")
+            yCount++;
+        if (x53 == "0")
+            yCount++;
+        // alert(xCount + "," + yCount);
+        if (xCount == 3)
+            return "p1";
+        if (yCount == 3)
+            return "p2";
+        if (xCount > 0 && yCount > 0)
+            return "Draw";
+        return "Continue";
+
+        // document.getElementById("winner").innerText = "Winner" + winner;
+
+
+    }
+    function secondx() {
+        
+        let x61 = document.getElementById("t13").value;
+        let x62 = document.getElementById("t22").value;
+        let x63 = document.getElementById("t31").value;
+
+        let xCount = 0;
+        let yCount = 0;
+        if (x61 == "X")
+            xCount++;
+        if (x62 == "X")
+            xCount++;
+        if (x63 == "X")
+            xCount++;
+        if (x61 == "0")
+            yCount++;
+        if (x62 == "0")
+            yCount++;
+        if (x63 == "0")
+            yCount++;
+        // alert(xCount + "," + yCount);
+        if (xCount == 3)
+            return "p1";
+        if (yCount == 3)
+            return "p2";
+        if (xCount > 0 && yCount > 0)
+            return "Draw";
+        return "Continue";
+
+        // document.getElementById("winner").innerText = "Winner" + winner;
+
+
+    }
+    function f() {
+        let count=0;
+        let winner = secondx();
+        if(winner=="p1")
+        return "p1";
+        if(winner=="p2")
+        return "p2";
+        if(winner=="Draw")
+        count++;
+        winner = firstrow();
+        if(winner=="p1")
+        return "p1";
+        if(winner=="p2")
+        return "p2";
+        if(winner=="Draw")
+        count++;
+        winner = secondrow();
+        if(winner=="p1")
+        return "p1";
+        if(winner=="p2")
+        return "p2";
+        if(winner=="Draw")
+        count++;
+        winner = thirdrow();
+        if(winner=="p1")
+        return "p1";
+        if(winner=="p2")
+        return "p2";
+        if(winner=="Draw")
+        count++;
+        winners = firstcol();
+        if(winner=="p1")
+        return "p1";
+        if(winner=="p2")
+        return "p2";
+        if(winner=="Draw")
+        count++;
+        winner = secondcol();
+        if(winner=="p1")
+        return "p1";
+        if(winner=="p2")
+        return "p2";
+        if(winner=="Draw")
+        count++;
+        winner = thirdcol();
+        if(winner=="p1")
+        return "p1";
+        if(winner=="p2")
+        return "p2";
+        if(winner=="Draw")
+        count++;
+        winner = firstx();
+        if(winner=="p1")
+        return "p1";
+        if(winner=="p2")
+        return "p2";
+        if(winner=="Draw")
+        count++;
+        if(count==8)
+        return "Draw";
+    return "Continue"
+
+        // console.log("Winner: " + winner);
+        // alert(winner);
+    }
+</script>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <center>
+                <input type="text" id="s1">
+            </center>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-2"></div>
+            <div class="col-md-4 mid">
+                <div class="row">
+                    <div class="col-md-4"><input id="t11" type="button" value="click" onclick="f1(1,1)"></div>
+                    <div class="col-md-4"><input id="t12" type="button" value="click" onclick="f1(1,2)"></div>
+                    <div class="col-md-4"><input id="t13" type="button" value="click" onclick="f1(1,3)"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4"><input id="t21" type="button" value="click" onclick="f1(2,1)"></div>
+                    <div class="col-md-4"><input id="t22" type="button" value="click" onclick="f1(2,2)"></div>
+                    <div class="col-md-4"><input id="t23" type="button" value="click" onclick="f1(2,3)"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4"><input id="t31" type="button" value="click" onclick="f1(3,1)"></div>
+                    <div class="col-md-4"><input id="t32" type="button" value="click" onclick="f1(3,2)"></div>
+                    <div class="col-md-4"><input id="t33" type="button" value="click" onclick="f1(3,3)"></div>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-2"> </div>
+        </div>
+        <!-- <button onclick=" f()"> check</button> -->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>if (xCount == 3 || yCount == 3) {
+    document.getElementById("t11").classList.add('winning-cell');
+    document.getElementById("t12").classList.add('winning-cell');
+    document.getElementById("t13").classList.add('winning-cell');
+    return xCount == 3 ? "player 1" : "player 2";
+}
+
+if (xCount > 0 && yCount > 0)
+    return "Draw";
+return "Continue";
+}

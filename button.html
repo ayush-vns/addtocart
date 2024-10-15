@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function setiteamsdetails() {
+            console.log("setting");
+            let key = document.getElementById("key").value;
+            let name = document.getElementById("txt").value;
+            localStorage.setItem(key, name);
+        }
+        
+        function getdetails() {
+            console.log("getting");
+            let key = document.getElementById("key").value;
+            let storedName = localStorage.getItem(key);
+            console.log("Retrieved name:", storedName);
+            document.getElementById("showget").value = storedName;
+        }
+        function removedetails(){
+            console.log ("removing");
+            let key = document.getElementById("key").value;
+            localStorage.removeItem(key);
+        }
+        function cleared(){
+          localStorage.clear();
+        }
+    </script>
+</head>
+
+<body>
+    <input id="key" type="text">
+    <input id="txt" type="text">
+    <br>
+    showdata <input id="showget" type="text"> 
+    <input type="button" value="Set" onclick="setiteamsdetails()">
+    <input type="button" value="Get" onclick="getdetails()">
+    <input type="button" value="romove" onclick="removedetails()">
+    <input type="button" value="Clear" onclick="cleared()">
+   
+
+</body>
+
+</html>  
